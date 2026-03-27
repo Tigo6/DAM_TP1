@@ -32,14 +32,20 @@ fun exercise1(option: Int?){
     }
     println(arr.contentToString())
 }
+fun generateUserMessage(): String{
+    var result: String = "";
+    result += "Exercício 1 || Para terminar selecione '0'";
+    result += "Escolha a uma das opções:";
+    result += "1) Com IntArray constructor";
+    result += "2) Com range e map():";
+    result += "3) Com Array with constructor:";
+    return result;
+}
 fun main(){
     val scanner = Scanner(System.`in`)
+    val message: String = generateUserMessage()
     while (true){
-        println("Exercício 1 || Para terminar selecione '0'")
-        println("Escolha a uma das opções:")
-        println("1) Com IntArray constructor")
-        println("2) Com range e map():")
-        println("3) Com Array with constructor:")
+        println(message)
         val num: Int? = scanner.nextLine().toIntOrNull()
         if(num == null || num > 3){
             println("Input Inválido")
@@ -51,4 +57,3 @@ fun main(){
         exercise1(num)
     }
 }
-
